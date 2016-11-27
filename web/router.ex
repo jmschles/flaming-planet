@@ -15,8 +15,8 @@ defmodule FlamingPlanet.Router do
 
   scope "/", FlamingPlanet do
     pipe_through :browser # Use the default browser stack
-
     get "/", PageController, :index
+    get "/daily_tasks", DailyTaskController, :index
   end
 
   # Other scopes may use custom stacks.
