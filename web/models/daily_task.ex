@@ -3,8 +3,8 @@ defmodule FlamingPlanet.DailyTask do
 
   schema "daily_tasks" do
     field :title, :string
+    field :info_link, :string
     field :description, :string
-    field :image_url, :string
 
     timestamps
   end

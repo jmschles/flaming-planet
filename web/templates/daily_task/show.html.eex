@@ -1,0 +1,5 @@
+<h2><%= link @daily_task.title, to: @daily_task.info_link %></h2>
+<p><%= @daily_task.description %></p>
+<form action="<%= next_id_url(@daily_task) %>">
+  <input type="submit" value="Next" class="btn btn-large" />
+</form>

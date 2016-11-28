@@ -4,7 +4,12 @@ defmodule FlamingPlanet.DailyTaskController do
   alias FlamingPlanet.DailyTask
 
   def index(conn, _params) do
-    daily_tasks = Repo.all(DailyTask)
-    render conn, "index.html", daily_tasks: daily_tasks
+    id = Repo.one(from d in DailyTask, order_by: [asc: d.id], limit: 1).id
+    redirect(conn, to: "/daily_tasks/#{ id }")
+  end
+
+  def show(conn, %{ "id" => id }) do
+    daily_task = Repo.get(DailyTask, id)
+    render conn, "show.html", daily_task: daily_task
   end
 end

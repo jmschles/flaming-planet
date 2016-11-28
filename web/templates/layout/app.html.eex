@@ -15,11 +15,14 @@
     <div class="container">
       <header class="header">
         <nav role="navigation">
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li><a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a></li>
+            <li><a href="https://xkcd.com/1732/">We're doomed!</a></li>
           </ul>
         </nav>
-        <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
