@@ -1,5 +1,6 @@
 defmodule FlamingPlanet.DailyTaskController do
   use FlamingPlanet.Web, :controller
+  plug :authenticate when action in [:new, :create]
 
   alias FlamingPlanet.DailyTask
 
@@ -11,5 +12,33 @@ defmodule FlamingPlanet.DailyTaskController do
   def show(conn, %{ "id" => id }) do
     daily_task = Repo.get(DailyTask, id)
     render conn, "show.html", daily_task: daily_task
+  end
+
+  def new(conn, _params) do
+    changeset = DailyTask.changeset(%DailyTask{})
+    render conn, "new.html", changeset: changeset
+  end
+
+  def create(conn, %{ "daily_task" => daily_task_params }) do
+    changeset = DailyTask.changeset(%DailyTask{}, daily_task_params)
+    case Repo.insert(changeset) do
+      { :ok, daily_task } ->
+        conn
+        |> put_flash(:info, "New daily task created!")
+        |> redirect(to: admin_path(conn, :show))
+      { :error, changeset } ->
+        render(conn, "new.html", changeset: changeset)
+    end
+  end
+
+  defp authenticate(conn, _opts) do
+    if conn.assigns.current_admin do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You must be logged in to access that page")
+      |> redirect(to: daily_task_path(conn, :index))
+      |> halt()
+    end
   end
 end

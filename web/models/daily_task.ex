@@ -8,4 +8,9 @@ defmodule FlamingPlanet.DailyTask do
 
     timestamps
   end
+
+  def changeset(model, params \\ :empty) do
+    model
+    |> cast(params, ~w(title description info_link), [])
+  end
 end

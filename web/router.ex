@@ -17,7 +17,7 @@ defmodule FlamingPlanet.Router do
   scope "/", FlamingPlanet do
     pipe_through :browser # Use the default browser stack
     get "/", PageController, :index
-    resources "/daily_tasks", DailyTaskController, only: [:index, :show]
+    resources "/daily_tasks", DailyTaskController, only: [:index, :show, :new, :create]
     resources "/admin", AdminController, only: [:show], singleton: true
     resources "/sessions", SessionController, only: [:create, :new, :delete]
   end
