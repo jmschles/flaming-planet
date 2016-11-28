@@ -6,6 +6,7 @@ This project is an attempt to answer that question.  By raising awareness and en
 
 ## Links
 * [NASA's page on climate](http://climate.nasa.gov/ "Yes, climate change is real")
+* [Climate Reality Project](https://www.climaterealityproject.org/ "Al Gore's still got it!")
 * [2016 will be the hottest year on record](https://www.theguardian.com/environment/2016/oct/18/2016-locked-into-being-hottest-year-on-record-nasa-says)
 * [Donald Trump's history of denying climate change](https://www.washingtonpost.com/news/the-fix/wp/2016/09/27/a-brief-history-of-donald-trumps-denialist-position-on-climate-change/)
 * [xkcd's Earth temperature timeline](https://xkcd.com/1732/ "For those who prefer pictures")
