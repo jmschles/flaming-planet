@@ -18,10 +18,15 @@
           <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
           <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
           <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a></li>
-            <li><a href="https://xkcd.com/1732/">We're doomed!</a></li>
-          </ul>
+          <ol class="nav nav-pills pull-right">
+            <%= if @current_admin do %>
+              <li><a href="">Logged in as admin: <%= @current_admin.username %></a></li>
+              <li><%= link "Log out", to: session_path(@conn, :delete, @current_admin), method: "delete" %></li>
+            <% else %>
+              <li><a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a></li>
+              <li><a href="https://xkcd.com/1732/">We're doomed!</a></li>
+            <% end %>
+          </ol>
         </nav>
       </header>
 

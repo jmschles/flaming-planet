@@ -5,5 +5,7 @@ defmodule FlamingPlanet.Admin do
     field :username, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+
+    timestamps
   end
 end

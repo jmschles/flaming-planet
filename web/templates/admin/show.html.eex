@@ -1,0 +1,2 @@
+<h1>Welcome, <%= @current_admin.username %>!</h1>
+
