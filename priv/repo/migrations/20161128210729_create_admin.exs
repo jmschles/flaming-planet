@@ -8,5 +8,7 @@ defmodule FlamingPlanet.Repo.Migrations.CreateAdmin do
 
       timestamps
     end
+
+    create unique_index(:admins, [:username])
   end
 end
