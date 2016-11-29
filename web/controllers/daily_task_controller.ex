@@ -22,7 +22,7 @@ defmodule FlamingPlanet.DailyTaskController do
   def create(conn, %{ "daily_task" => daily_task_params }) do
     changeset = DailyTask.changeset(%DailyTask{}, daily_task_params)
     case Repo.insert(changeset) do
-      { :ok, daily_task } ->
+      { :ok, _daily_task } ->
         conn
         |> put_flash(:info, "New daily task created!")
         |> redirect(to: admin_path(conn, :show))
