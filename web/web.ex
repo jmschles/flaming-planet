@@ -36,6 +36,7 @@ defmodule FlamingPlanet.Web do
 
       import FlamingPlanet.Router.Helpers
       import FlamingPlanet.Gettext
+      import FlamingPlanet.Auth, only: [authenticate_admin: 2]
     end
   end
 

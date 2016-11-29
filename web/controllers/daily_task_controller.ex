@@ -1,6 +1,6 @@
 defmodule FlamingPlanet.DailyTaskController do
   use FlamingPlanet.Web, :controller
-  plug :authenticate when action in [:new, :create]
+  plug :authenticate_admin when action in [:new, :create]
 
   alias FlamingPlanet.DailyTask
 
@@ -28,17 +28,6 @@ defmodule FlamingPlanet.DailyTaskController do
         |> redirect(to: admin_path(conn, :show))
       { :error, changeset } ->
         render(conn, "new.html", changeset: changeset)
-    end
-  end
-
-  defp authenticate(conn, _opts) do
-    if conn.assigns.current_admin do
-      conn
-    else
-      conn
-      |> put_flash(:error, "You must be logged in to access that page")
-      |> redirect(to: daily_task_path(conn, :index))
-      |> halt()
     end
   end
 end
