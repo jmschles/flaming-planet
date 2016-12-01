@@ -25,11 +25,11 @@ defmodule FlamingPlanet.Router do
 
   scope "/manage", FlamingPlanet do
     pipe_through :browser
-    resources "/daily_tasks", Manage.DailyTaskController, only: [:index, :show, :new, :create]
+    resources "/daily_tasks", Manage.DailyTaskController
   end
 
   scope "/api", FlamingPlanet do
     pipe_through :api
-    resources "/daily_tasks", Api.DailyTaskController, only: [:index, :show]
+    resources "/daily_tasks", Api.DailyTaskController, only: [:index, :show], as: :api_daily_tasks
   end
 end

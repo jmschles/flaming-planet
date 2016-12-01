@@ -1,6 +1,17 @@
-<h1>What can I do today?</h1>
+<h1>Daily Tasks</h1>
 
-<%= for task <- @daily_tasks do %>
-  <h2><%= link task.title, to: task.info_link %></h2>
-  <p><%= task.description %></p>
-<% end %>
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Title/Link</th>
+    <th>Description</th>
+  </tr>
+  <%= for task <- @daily_tasks do %>
+    <tr>
+      <td><%= task.id %></td>
+      <td><%= link task.title, to: task.info_link %></td>
+      <td><%= task.description %></td>
+      <td><%= link "x", to: daily_task_path(@conn, :delete, task), method: "delete" %></td>
+    </tr>
+  <% end %>
+</table>

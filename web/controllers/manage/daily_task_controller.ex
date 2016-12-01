@@ -30,4 +30,13 @@ defmodule FlamingPlanet.Manage.DailyTaskController do
         render(conn, "new.html", changeset: changeset)
     end
   end
+
+  def delete(conn, %{ "id" => id }) do
+    daily_task = Repo.get(DailyTask, id)
+    Repo.delete!(daily_task)
+
+    conn
+    |> put_flash(:info, "Daily task deleted")
+    |> redirect(to: daily_task_path(conn, :index))
+  end
 end
