@@ -31,6 +31,6 @@ defmodule FlamingPlanet.Router do
   scope "/api", FlamingPlanet do
     pipe_through :api
 
-
+    resources "/daily_tasks", Api.DailyTaskController, only: [:index]
   end
 end
