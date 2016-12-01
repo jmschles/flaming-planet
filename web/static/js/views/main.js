@@ -1,9 +1,9 @@
 export default class MainView {
   mount () {
-    console.log('Mounted');
+    // console.log('Mounted');
   }
 
   unmount () {
-    console.log('Unmounted');
+    // console.log('Unmounted');
   }
 }

@@ -5,13 +5,11 @@ export default class View extends MainView {
     super.mount();
 
     // Specific logic here
-    console.log('DailyTaskIndexView mounted');
   }
 
   unmount() {
     super.unmount();
 
     // Specific logic here
-    console.log('DailyTaskIndexView unmounted');
   }
 }
