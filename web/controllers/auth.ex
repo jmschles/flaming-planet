@@ -1,6 +1,9 @@
 defmodule FlamingPlanet.Auth do
   import Plug.Conn
+  import Phoenix.Controller
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
+
+  alias FlamingPlanet.Router.Helpers
 
   def init(opts) do
     Keyword.fetch!(opts, :repo)
@@ -35,6 +38,17 @@ defmodule FlamingPlanet.Auth do
       true ->
         dummy_checkpw()
         { :error, :not_found, conn }
+    end
+  end
+
+  def authenticate_admin(conn, _opts) do
+    if conn.assigns.current_admin do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You must be logged in to access that page")
+      |> redirect(to: Helpers.daily_task_path(conn, :index))
+      |> halt()
     end
   end
 end

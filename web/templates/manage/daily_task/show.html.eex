@@ -1,0 +1,2 @@
+<h2><%= link @daily_task.title, to: @daily_task.info_link %></h2>
+<p><%= @daily_task.description %></p>

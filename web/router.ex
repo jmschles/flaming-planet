@@ -15,15 +15,21 @@ defmodule FlamingPlanet.Router do
   end
 
   scope "/", FlamingPlanet do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
     get "/", PageController, :index
-    resources "/daily_tasks", DailyTaskController, only: [:index, :show, :new, :create]
     resources "/admin", AdminController, only: [:show], singleton: true
-    resources "/sessions", SessionController, only: [:create, :new, :delete]
+
+    get "/login", SessionController, :new
+    resources "/sessions", SessionController, only: [:create, :delete]
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", FlamingPlanet do
-  #   pipe_through :api
-  # end
+  scope "/manage", FlamingPlanet do
+    pipe_through :browser
+    resources "/daily_tasks", Manage.DailyTaskController
+  end
+
+  scope "/api", FlamingPlanet do
+    pipe_through :api
+    resources "/daily_tasks", Api.DailyTaskController, only: [:index, :show], as: :api_daily_tasks
+  end
 end

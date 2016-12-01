@@ -1,6 +1,4 @@
-<h1>New Daily Task</h1>
-
-<%= form_for @changeset, daily_task_path(@conn, :create), fn f -> %>
+<%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something done got messed up! Please check the errors below.</p>
@@ -8,17 +6,20 @@
   <% end %>
 
   <div class="form-group">
+    <%= label f, :title, class: "control-label" %>
     <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
     <%= error_tag f, :title %>
   </div>
   <div class="form-group">
+    <%= label f, :info_link, class: "control-label" %>
     <%= text_input f, :info_link, placeholder: "Link for further info", class: "form-control" %>
     <%= error_tag f, :info_link %>
   </div>
   <div class="form-group">
+    <%= label f, :description, class: "control-label" %>
     <%= textarea f, :description, placeholder: "Description", class: "form-control" %>
     <%= error_tag f, :description %>
   </div>
 
-  <%= submit "Create Daily Task", class: "btn btn-primary" %>
+  <%= submit @button_text, class: "btn btn-primary" %>
 <% end %>

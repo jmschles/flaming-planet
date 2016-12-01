@@ -1,6 +1,0 @@
-<h1>What can I do today?</h1>
-
-<%= for task <- @daily_tasks do %>
-  <h2><%= link task.title, to: task.info_link %></h2>
-  <p><%= task.description %></p>
-<% end %>
