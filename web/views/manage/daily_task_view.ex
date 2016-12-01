@@ -1,4 +1,4 @@
-defmodule FlamingPlanet.DailyTaskView do
+defmodule FlamingPlanet.Manage.DailyTaskView do
   use FlamingPlanet.Web, :view
   alias FlamingPlanet.DailyTask
 
