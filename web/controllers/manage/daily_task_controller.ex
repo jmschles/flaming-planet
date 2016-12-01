@@ -25,7 +25,7 @@ defmodule FlamingPlanet.Manage.DailyTaskController do
       { :ok, _daily_task } ->
         conn
         |> put_flash(:info, "New daily task created!")
-        |> redirect(to: admin_path(conn, :show))
+        |> redirect(to: daily_task_path(conn, :index))
       { :error, changeset } ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -38,5 +38,25 @@ defmodule FlamingPlanet.Manage.DailyTaskController do
     conn
     |> put_flash(:info, "Daily task deleted")
     |> redirect(to: daily_task_path(conn, :index))
+  end
+
+  def edit(conn, %{ "id" => id }) do
+    daily_task = Repo.get(DailyTask, id)
+    changeset = DailyTask.changeset(daily_task)
+    render(conn, "edit.html", daily_task: daily_task, changeset: changeset)
+  end
+
+  def update(conn, %{ "id" => id, "daily_task" => daily_task_params }) do
+    daily_task = Repo.get(DailyTask, id)
+    changeset = DailyTask.changeset(daily_task, daily_task_params)
+
+    case Repo.update(changeset) do
+      { :ok, _daily_task } ->
+        conn
+        |> put_flash(:info, "Daily task updated!")
+        |> redirect(to: daily_task_path(conn, :index))
+      { :error, changeset } ->
+        render(conn, "edit.html", changeset: changeset)
+    end
   end
 end

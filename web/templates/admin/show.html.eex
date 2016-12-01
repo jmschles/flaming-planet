@@ -1,3 +1,5 @@
 <h1>Welcome, <%= @current_admin.username %>!</h1>
 
-<%= link "Create new daily task", to: daily_task_path(@conn, :new) %>
+<p>
+  <a href="<%= daily_task_path(@conn, :index) %>" class="btn btn-primary">Daily Tasks</a>
+</p>

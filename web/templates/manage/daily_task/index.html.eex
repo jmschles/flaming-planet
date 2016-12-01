@@ -1,17 +1,28 @@
 <h1>Daily Tasks</h1>
 
+<%= link "Create new daily task", to: daily_task_path(@conn, :new) %>
+
 <table class="table">
   <tr>
     <th>ID</th>
     <th>Title/Link</th>
     <th>Description</th>
+    <th>Edit</th>
+    <th>Kill</th>
   </tr>
   <%= for task <- @daily_tasks do %>
     <tr>
       <td><%= task.id %></td>
       <td><%= link task.title, to: task.info_link %></td>
       <td><%= task.description %></td>
-      <td><%= link "x", to: daily_task_path(@conn, :delete, task), method: "delete" %></td>
+      <td><%= link "Edit", to: daily_task_path(@conn, :edit, task) %></td>
+      <td class="delete">
+        <form action="<%= daily_task_path(@conn, :delete, task) %>" class="link" method="post">
+          <input name="_method" type="hidden" value="delete">
+          <input name="_csrf_token" type="hidden" value="<%= get_csrf_token %>">
+          <input type="submit" value="x" onclick="return confirm('Are you sure?')">
+        </form>
+      </td>
     </tr>
   <% end %>
 </table>
