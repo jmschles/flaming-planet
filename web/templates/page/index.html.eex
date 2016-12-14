@@ -1,5 +1,4 @@
-<div class="jumbotron">
-  <h2>Stay tuned, we'll be up soon!</h2>
-</div>
 <div class="content"></div>
-<a href="#" id="next">Next</a>
+<div class="next-button">
+  <a class="btn btn-primary" href="#" id="next">Next</a>
+</div>
