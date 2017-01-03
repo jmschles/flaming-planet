@@ -1,0 +1,31 @@
+<h2>Inspiring Stuff</h2>
+
+<%= link "Create new inspiring thing", to: inspiration_path(@conn, :new), class: "btn btn-primary" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title/Link</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for inspiration <- @inspirations do %>
+        <tr>
+          <td><%= inspiration.id %></td>
+          <td><%= link inspiration.title, to: inspiration.info_link %></td>
+          <td><%= inspiration.description %></td>
+
+          <td class="text-right">
+            <%= link "Edit", to: inspiration_path(@conn, :edit, inspiration), class: "btn btn-default btn-xs" %>
+            <%= link "Delete", to: inspiration_path(@conn, :delete, inspiration), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link "Back", to: admin_path(@conn, :show) %>

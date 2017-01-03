@@ -1,7 +1,7 @@
-defmodule FlamingPlanet.DailyTask do
+defmodule FlamingPlanet.Inspiration do
   use FlamingPlanet.Web, :model
 
-  schema "daily_tasks" do
+  schema "inspirations" do
     field :title, :string
     field :info_link, :string
     field :description, :string
@@ -9,7 +9,7 @@ defmodule FlamingPlanet.DailyTask do
     timestamps
   end
 
-  def changeset(struct, params \\ :empty) do
+  def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, ~w(title info_link description), [])
   end

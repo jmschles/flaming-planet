@@ -1,28 +1,30 @@
 <h1>Daily Tasks</h1>
 
-<%= link "Create new daily task", to: daily_task_path(@conn, :new) %>
+<%= link "Create new daily task", to: daily_task_path(@conn, :new), class: "btn btn-primary" %>
 
 <table class="table">
-  <tr>
-    <th>ID</th>
-    <th>Title/Link</th>
-    <th>Description</th>
-    <th>Edit</th>
-    <th>Kill</th>
-  </tr>
-  <%= for task <- @daily_tasks do %>
+  <thead>
     <tr>
-      <td><%= task.id %></td>
-      <td><%= link task.title, to: task.info_link %></td>
-      <td><%= task.description %></td>
-      <td><%= link "Edit", to: daily_task_path(@conn, :edit, task) %></td>
-      <td class="delete">
-        <form action="<%= daily_task_path(@conn, :delete, task) %>" class="link" method="post">
-          <input name="_method" type="hidden" value="delete">
-          <input name="_csrf_token" type="hidden" value="<%= get_csrf_token %>">
-          <input type="submit" value="x" onclick="return confirm('Are you sure?')">
-        </form>
-      </td>
+      <th>ID</th>
+      <th>Title/Link</th>
+      <th>Description</th>
+
+      <th></th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <%= for task <- @daily_tasks do %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= link task.title, to: task.info_link %></td>
+        <td><%= task.description %></td>
+        <td class="text-right">
+          <%= link "Edit", to: daily_task_path(@conn, :edit, task), class: "btn btn-default btn-xs" %>
+          <%= link "Delete", to: daily_task_path(@conn, :delete, task), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
+
+<%= link "Back", to: admin_path(@conn, :show) %>

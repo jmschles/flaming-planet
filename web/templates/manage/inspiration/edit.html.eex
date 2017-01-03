@@ -1,0 +1,6 @@
+<h2>Edit inspiration</h2>
+
+<%= render "form.html", changeset: @changeset, conn: @conn, button_text: "Submit",
+                        action: inspiration_path(@conn, :update, @inspiration) %>
+
+<%= link "Back", to: inspiration_path(@conn, :index) %>

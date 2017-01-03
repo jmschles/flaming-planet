@@ -1,0 +1,23 @@
+<h2>Show inspiration</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @inspiration.title %>
+  </li>
+
+  <li>
+    <strong>Info link:</strong>
+    <%= @inspiration.info_link %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @inspiration.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: inspiration_path(@conn, :edit, @inspiration) %>
+<%= link "Back", to: inspiration_path(@conn, :index) %>

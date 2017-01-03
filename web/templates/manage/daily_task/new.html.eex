@@ -1,6 +1,6 @@
-<h1>New Daily Task</h1>
+<h1>New daily task</h1>
 
-<%= render "form.html", changeset: @changeset, conn: @conn, button_text: "Create Daily Task",
+<%= render "form.html", changeset: @changeset, conn: @conn, button_text: "Create new daily task",
                         action: daily_task_path(@conn, :create) %>
 
 <%= link "Back", to: daily_task_path(@conn, :index) %>
