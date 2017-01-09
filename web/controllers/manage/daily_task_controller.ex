@@ -1,17 +1,12 @@
 defmodule FlamingPlanet.Manage.DailyTaskController do
   use FlamingPlanet.Web, :controller
-  plug :authenticate_admin when action in [:new, :create, :index, :show]
+  plug :authenticate_admin
 
   alias FlamingPlanet.DailyTask
 
   def index(conn, _params) do
     daily_tasks = Repo.all(DailyTask)
     render conn, "index.html", daily_tasks: daily_tasks
-  end
-
-  def show(conn, %{ "id" => id }) do
-    daily_task = Repo.get(DailyTask, id)
-    render conn, "show.html", daily_task: daily_task
   end
 
   def new(conn, _params) do

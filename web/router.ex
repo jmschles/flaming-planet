@@ -25,9 +25,9 @@ defmodule FlamingPlanet.Router do
 
   scope "/manage", FlamingPlanet do
     pipe_through :browser
-    resources "/daily_tasks", Manage.DailyTaskController
-    resources "/inspirations", Manage.InspirationController
-    resources "/donations", Manage.DonationController
+    resources "/daily_tasks", Manage.DailyTaskController, except: [:show]
+    resources "/inspirations", Manage.InspirationController, except: [:show]
+    resources "/donations", Manage.DonationController, except: [:show]
   end
 
   scope "/api", FlamingPlanet do

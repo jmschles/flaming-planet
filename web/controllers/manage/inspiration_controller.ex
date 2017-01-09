@@ -1,6 +1,6 @@
 defmodule FlamingPlanet.Manage.InspirationController do
   use FlamingPlanet.Web, :controller
-  plug :authenticate_admin when action in [:new, :create, :index, :show]
+  plug :authenticate_admin
 
   alias FlamingPlanet.Inspiration
 
@@ -25,11 +25,6 @@ defmodule FlamingPlanet.Manage.InspirationController do
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
-  end
-
-  def show(conn, %{"id" => id}) do
-    inspiration = Repo.get!(Inspiration, id)
-    render(conn, "show.html", inspiration: inspiration)
   end
 
   def edit(conn, %{"id" => id}) do

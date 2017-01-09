@@ -27,11 +27,6 @@ defmodule FlamingPlanet.Manage.DonationController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    donation = Repo.get!(Donation, id)
-    render(conn, "show.html", donation: donation)
-  end
-
   def edit(conn, %{"id" => id}) do
     donation = Repo.get!(Donation, id)
     changeset = Donation.changeset(donation)
