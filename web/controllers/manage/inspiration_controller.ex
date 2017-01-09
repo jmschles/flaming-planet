@@ -46,7 +46,7 @@ defmodule FlamingPlanet.Manage.InspirationController do
       {:ok, inspiration} ->
         conn
         |> put_flash(:info, "Inspiration updated!")
-        |> redirect(to: inspiration_path(conn, :show, inspiration))
+        |> redirect(to: inspiration_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", inspiration: inspiration, changeset: changeset)
     end

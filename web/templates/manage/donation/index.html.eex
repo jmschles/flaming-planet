@@ -1,0 +1,30 @@
+<h2>Donation-worthy Stuff</h2>
+
+<%= link "Create new donation-worthy thing", to: donation_path(@conn, :new), class: "btn btn-primary" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title/Link</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for donation <- @donations do %>
+      <tr>
+        <td><%= donation.id %></td>
+        <td><%= link donation.title, to: donation.info_link %></td>
+        <td><%= donation.description %></td>
+        <td class="text-right">
+          <%= link "Edit", to: donation_path(@conn, :edit, donation), class: "btn btn-default btn-xs" %>
+          <%= link "Delete", to: donation_path(@conn, :delete, donation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link "Back", to: admin_path(@conn, :show) %>

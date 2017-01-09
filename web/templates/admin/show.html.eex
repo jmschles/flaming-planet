@@ -2,3 +2,4 @@
 
 <p><%= link "Daily Tasks", to: daily_task_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
 <p><%= link "Inspirational Stuff", to: inspiration_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
+<p><%= link "Donation-Worthy Places", to: donation_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
