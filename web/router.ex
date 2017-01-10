@@ -29,7 +29,7 @@ defmodule FlamingPlanet.Router do
     resources "/inspirations", Manage.InspirationController, except: [:show]
     resources "/donations", Manage.DonationController, except: [:show]
     resources "/government_actions", Manage.GovernmentActionController, except: [:show]
-    resources "/news_itesm", Manage.NewsItemController, except: [:show]
+    resources "/news_items", Manage.NewsItemController, except: [:show]
   end
 
   scope "/api", FlamingPlanet do
