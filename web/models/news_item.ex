@@ -1,7 +1,7 @@
 defmodule FlamingPlanet.NewsItem do
   use FlamingPlanet.Web, :model
 
-  schema "news_item" do
+  schema "news_items" do
     field :title, :string
     field :info_link, :string
     field :description, :string
