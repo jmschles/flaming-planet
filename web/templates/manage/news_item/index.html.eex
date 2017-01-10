@@ -1,0 +1,31 @@
+<h2>All the latest!</h2>
+
+<%= link "Create news item", to: news_item_path(@conn, :new), class: "btn btn-primary" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title/Link</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for news_item <- @news_item do %>
+      <tr>
+        <td><%= news_item.id %></td>
+        <td><%= link news_item.title, to: news_item.info_link %></td>
+        <td><%= news_item.description %></td>
+
+        <td class="text-right">
+          <%= link "Edit", to: news_item_path(@conn, :edit, news_item), class: "btn btn-default btn-xs" %>
+          <%= link "Delete", to: news_item_path(@conn, :delete, news_item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link "Back", to: admin_path(@conn, :show) %>

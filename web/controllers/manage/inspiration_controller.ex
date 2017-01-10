@@ -38,7 +38,7 @@ defmodule FlamingPlanet.Manage.InspirationController do
     changeset = Inspiration.changeset(inspiration, inspiration_params)
 
     case Repo.update(changeset) do
-      {:ok, inspiration} ->
+      {:ok, _inspiration} ->
         conn
         |> put_flash(:info, "Inspiration updated!")
         |> redirect(to: inspiration_path(conn, :index))

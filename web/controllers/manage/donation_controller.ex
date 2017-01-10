@@ -38,7 +38,7 @@ defmodule FlamingPlanet.Manage.DonationController do
     changeset = Donation.changeset(donation, donation_params)
 
     case Repo.update(changeset) do
-      {:ok, donation} ->
+      {:ok, _donation} ->
         conn
         |> put_flash(:info, "Donation-worthy item updated!")
         |> redirect(to: donation_path(conn, :index))

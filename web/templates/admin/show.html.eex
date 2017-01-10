@@ -3,3 +3,5 @@
 <p><%= link "Daily Tasks", to: daily_task_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
 <p><%= link "Inspirational Stuff", to: inspiration_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
 <p><%= link "Donation-Worthy Places", to: donation_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
+<p><%= link "Government Actions", to: government_action_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
+<p><%= link "News Items", to: news_item_path(@conn, :index), class: "btn btn-primary btn-large" %></p>

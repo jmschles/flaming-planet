@@ -1,0 +1,6 @@
+<h2>Edit government action</h2>
+
+<%= render "form.html", changeset: @changeset, button_text: "Submit",
+                        action: government_action_path(@conn, :update, @government_action) %>
+
+<%= link "Back", to: government_action_path(@conn, :index) %>
