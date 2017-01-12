@@ -5,10 +5,6 @@ defmodule FlamingPlanet.Api.DailyTaskView do
     %{data: render_many(daily_tasks, FlamingPlanet.Api.DailyTaskView, "daily_task.json")}
   end
 
-  def render("show.json", %{daily_task: daily_task}) do
-    %{data: render_one(daily_task, FlamingPlanet.Api.DailyTaskView, "daily_task.json")}
-  end
-
   def render("daily_task.json", %{daily_task: daily_task}) do
     %{
       id: daily_task.id,

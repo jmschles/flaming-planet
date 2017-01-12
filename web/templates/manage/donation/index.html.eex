@@ -1,6 +1,6 @@
 <h2>Donation-worthy Stuff</h2>
 
-<%= link "Create new donation-worthy thing", to: donation_path(@conn, :new), class: "btn btn-primary" %>
+<%= link "Create new donation-worthy thing", to: manage_donation_path(@conn, :new), class: "btn btn-primary" %>
 
 <table class="table">
   <thead>
@@ -19,8 +19,8 @@
         <td><%= link donation.title, to: donation.info_link %></td>
         <td><%= donation.description %></td>
         <td class="text-right">
-          <%= link "Edit", to: donation_path(@conn, :edit, donation), class: "btn btn-default btn-xs" %>
-          <%= link "Delete", to: donation_path(@conn, :delete, donation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+          <%= link "Edit", to: manage_donation_path(@conn, :edit, donation), class: "btn btn-default btn-xs" %>
+          <%= link "Delete", to: manage_donation_path(@conn, :delete, donation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
         </td>
       </tr>
     <% end %>

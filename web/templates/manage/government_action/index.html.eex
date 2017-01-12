@@ -1,6 +1,6 @@
 <h2>Government actions and proposals</h2>
 
-<%= link "Add new government action", to: government_action_path(@conn, :new), class: "btn btn-primary" %>
+<%= link "Add new government action", to: manage_government_action_path(@conn, :new), class: "btn btn-primary" %>
 
 <table class="table">
   <thead>
@@ -20,8 +20,8 @@
         <td><%= government_action.description %></td>
 
         <td class="text-right">
-          <%= link "Edit", to: government_action_path(@conn, :edit, government_action), class: "btn btn-default btn-xs" %>
-          <%= link "Delete", to: government_action_path(@conn, :delete, government_action), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+          <%= link "Edit", to: manage_government_action_path(@conn, :edit, government_action), class: "btn btn-default btn-xs" %>
+          <%= link "Delete", to: manage_government_action_path(@conn, :delete, government_action), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
         </td>
       </tr>
     <% end %>

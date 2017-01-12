@@ -21,7 +21,7 @@ defmodule FlamingPlanet.Manage.GovernmentActionController do
       {:ok, _government_action} ->
         conn
         |> put_flash(:info, "New government action created!")
-        |> redirect(to: government_action_path(conn, :index))
+        |> redirect(to: manage_government_action_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -41,7 +41,7 @@ defmodule FlamingPlanet.Manage.GovernmentActionController do
       {:ok, _government_action} ->
         conn
         |> put_flash(:info, "Government action updated!")
-        |> redirect(to: government_action_path(conn, :index))
+        |> redirect(to: manage_government_action_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", government_action: government_action, changeset: changeset)
     end
@@ -53,6 +53,6 @@ defmodule FlamingPlanet.Manage.GovernmentActionController do
 
     conn
     |> put_flash(:info, "Government action deleted.")
-    |> redirect(to: government_action_path(conn, :index))
+    |> redirect(to: manage_government_action_path(conn, :index))
   end
 end

@@ -21,7 +21,7 @@ defmodule FlamingPlanet.Manage.InspirationController do
       {:ok, _inspiration} ->
         conn
         |> put_flash(:info, "Inspiration created!")
-        |> redirect(to: inspiration_path(conn, :index))
+        |> redirect(to: manage_inspiration_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -41,7 +41,7 @@ defmodule FlamingPlanet.Manage.InspirationController do
       {:ok, _inspiration} ->
         conn
         |> put_flash(:info, "Inspiration updated!")
-        |> redirect(to: inspiration_path(conn, :index))
+        |> redirect(to: manage_inspiration_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", inspiration: inspiration, changeset: changeset)
     end
@@ -53,6 +53,6 @@ defmodule FlamingPlanet.Manage.InspirationController do
 
     conn
     |> put_flash(:info, "Inspiration deleted")
-    |> redirect(to: inspiration_path(conn, :index))
+    |> redirect(to: manage_inspiration_path(conn, :index))
   end
 end

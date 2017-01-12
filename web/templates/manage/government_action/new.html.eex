@@ -1,6 +1,6 @@
 <h2>New governmental action</h2>
 
 <%= render "form.html", changeset: @changeset, button_text: "Create new governmental action",
-                        action: government_action_path(@conn, :create) %>
+                        action: manage_government_action_path(@conn, :create) %>
 
-<%= link "Back", to: government_action_path(@conn, :index) %>
+<%= link "Back", to: manage_government_action_path(@conn, :index) %>

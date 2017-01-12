@@ -23,17 +23,17 @@ defmodule FlamingPlanet.Router do
     resources "/sessions", SessionController, only: [:create, :delete]
   end
 
-  scope "/manage", FlamingPlanet do
-    pipe_through :browser
-    resources "/daily_tasks", Manage.DailyTaskController, except: [:show]
-    resources "/inspirations", Manage.InspirationController, except: [:show]
-    resources "/donations", Manage.DonationController, except: [:show]
-    resources "/government_actions", Manage.GovernmentActionController, except: [:show]
-    resources "/news_items", Manage.NewsItemController, except: [:show]
+  scope "/", FlamingPlanet.Api do
+    pipe_through :api
+    resources "/daily_tasks", DailyTaskController, only: [:index]
   end
 
-  scope "/api", FlamingPlanet do
-    pipe_through :api
-    resources "/daily_tasks", Api.DailyTaskController, only: [:index, :show], as: :api_daily_tasks
+  scope "/manage", FlamingPlanet.Manage, as: :manage do
+    pipe_through :browser
+    resources "/daily_tasks", DailyTaskController, except: [:show]
+    resources "/inspirations", InspirationController, except: [:show]
+    resources "/donations", DonationController, except: [:show]
+    resources "/government_actions", GovernmentActionController, except: [:show]
+    resources "/news_items", NewsItemController, except: [:show]
   end
 end

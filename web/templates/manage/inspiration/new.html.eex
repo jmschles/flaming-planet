@@ -1,6 +1,6 @@
 <h2>New inspiring thing</h2>
 
 <%= render "form.html", changeset: @changeset, conn: @conn, button_text: "Create new inspiring thing",
-                        action: inspiration_path(@conn, :create) %>
+                        action: manage_inspiration_path(@conn, :create) %>
 
-<%= link "Back", to: inspiration_path(@conn, :index) %>
+<%= link "Back", to: manage_inspiration_path(@conn, :index) %>

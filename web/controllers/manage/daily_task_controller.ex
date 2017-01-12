@@ -20,7 +20,7 @@ defmodule FlamingPlanet.Manage.DailyTaskController do
       { :ok, _daily_task } ->
         conn
         |> put_flash(:info, "New daily task created!")
-        |> redirect(to: daily_task_path(conn, :index))
+        |> redirect(to: manage_daily_task_path(conn, :index))
       { :error, changeset } ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -32,7 +32,7 @@ defmodule FlamingPlanet.Manage.DailyTaskController do
 
     conn
     |> put_flash(:info, "Daily task deleted")
-    |> redirect(to: daily_task_path(conn, :index))
+    |> redirect(to: manage_daily_task_path(conn, :index))
   end
 
   def edit(conn, %{ "id" => id }) do
@@ -49,7 +49,7 @@ defmodule FlamingPlanet.Manage.DailyTaskController do
       { :ok, _daily_task } ->
         conn
         |> put_flash(:info, "Daily task updated!")
-        |> redirect(to: daily_task_path(conn, :index))
+        |> redirect(to: manage_daily_task_path(conn, :index))
       { :error, changeset } ->
         render(conn, "edit.html", changeset: changeset)
     end

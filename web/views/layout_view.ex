@@ -16,6 +16,12 @@ defmodule FlamingPlanet.LayoutView do
     |> Enum.join("")
   end
 
+  def resource_name(conn) do
+    conn
+    |> view_name
+    |> Inflex.pluralize
+  end
+
   # Takes the resource name of the view module and removes the
   # the ending *_view* string.
   defp view_name(conn) do

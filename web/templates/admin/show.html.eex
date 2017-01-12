@@ -1,7 +1,7 @@
 <h1>Welcome, <%= @current_admin.username %>!</h1>
 
-<p><%= link "Daily Tasks", to: daily_task_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
-<p><%= link "Inspirational Stuff", to: inspiration_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
-<p><%= link "Donation-Worthy Places", to: donation_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
-<p><%= link "Government Actions", to: government_action_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
-<p><%= link "News Items", to: news_item_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
+<p><%= link "Daily Tasks", to: manage_daily_task_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
+<p><%= link "Inspirational Stuff", to: manage_inspiration_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
+<p><%= link "Donation-Worthy Places", to: manage_donation_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
+<p><%= link "Government Actions", to: manage_government_action_path(@conn, :index), class: "btn btn-primary btn-large" %></p>
+<p><%= link "News Items", to: manage_news_item_path(@conn, :index), class: "btn btn-primary btn-large" %></p>

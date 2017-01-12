@@ -21,7 +21,7 @@ defmodule FlamingPlanet.Manage.DonationController do
       {:ok, _donation} ->
         conn
         |> put_flash(:info, "Donation-worthy item created!")
-        |> redirect(to: donation_path(conn, :index))
+        |> redirect(to: manage_donation_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -41,7 +41,7 @@ defmodule FlamingPlanet.Manage.DonationController do
       {:ok, _donation} ->
         conn
         |> put_flash(:info, "Donation-worthy item updated!")
-        |> redirect(to: donation_path(conn, :index))
+        |> redirect(to: manage_donation_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", donation: donation, changeset: changeset)
     end
@@ -53,6 +53,6 @@ defmodule FlamingPlanet.Manage.DonationController do
 
     conn
     |> put_flash(:info, "Donation-worthy item deleted.")
-    |> redirect(to: donation_path(conn, :index))
+    |> redirect(to: manage_donation_path(conn, :index))
   end
 end

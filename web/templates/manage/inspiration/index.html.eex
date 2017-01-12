@@ -1,6 +1,6 @@
 <h2>Inspiring Stuff</h2>
 
-<%= link "Create new inspiring thing", to: inspiration_path(@conn, :new), class: "btn btn-primary" %>
+<%= link "Create new inspiring thing", to: manage_inspiration_path(@conn, :new), class: "btn btn-primary" %>
 
 <table class="table">
   <thead>
@@ -20,8 +20,8 @@
           <td><%= inspiration.description %></td>
 
           <td class="text-right">
-            <%= link "Edit", to: inspiration_path(@conn, :edit, inspiration), class: "btn btn-default btn-xs" %>
-            <%= link "Delete", to: inspiration_path(@conn, :delete, inspiration), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+            <%= link "Edit", to: manage_inspiration_path(@conn, :edit, inspiration), class: "btn btn-default btn-xs" %>
+            <%= link "Delete", to: manage_inspiration_path(@conn, :delete, inspiration), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
           </td>
         </tr>
     <% end %>

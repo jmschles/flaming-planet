@@ -21,7 +21,7 @@ defmodule FlamingPlanet.Manage.NewsItemController do
       {:ok, _news_item} ->
         conn
         |> put_flash(:info, "News item created!")
-        |> redirect(to: news_item_path(conn, :index))
+        |> redirect(to: manage_news_item_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -41,7 +41,7 @@ defmodule FlamingPlanet.Manage.NewsItemController do
       {:ok, _news_item} ->
         conn
         |> put_flash(:info, "News item updated!")
-        |> redirect(to: news_item_path(conn, :index))
+        |> redirect(to: manage_news_item_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", news_item: news_item, changeset: changeset)
     end
@@ -53,6 +53,6 @@ defmodule FlamingPlanet.Manage.NewsItemController do
 
     conn
     |> put_flash(:info, "News item deleted.")
-    |> redirect(to: news_item_path(conn, :index))
+    |> redirect(to: manage_news_item_path(conn, :index))
   end
 end

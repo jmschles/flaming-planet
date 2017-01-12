@@ -1,6 +1,6 @@
 <h2>New donation</h2>
 
 <%= render "form.html", changeset: @changeset, button_text: "Create new donation-worthy thing",
-                        action: donation_path(@conn, :create) %>
+                        action: manage_donation_path(@conn, :create) %>
 
-<%= link "Back", to: donation_path(@conn, :index) %>
+<%= link "Back", to: manage_donation_path(@conn, :index) %>
