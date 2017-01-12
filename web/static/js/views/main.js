@@ -9,10 +9,7 @@ export default class MainView {
 
     // Bootstrap data to the page
     function loadData(resourceName) {
-      if (!resourceName) {
-        resourceName = 'daily_tasks';
-      }
-
+      if (!resourceName) { resourceName = 'daily_tasks'; }
       $('.content').html('');
 
       $.getJSON(resourceName, function(response) {
@@ -47,10 +44,9 @@ export default class MainView {
 
     // Buttons to take you to other kinds of data
     function loadButtons(resourceName) {
-      if (!resourceName) {
-        resourceName = 'daily_tasks';
-      }
+      if (!resourceName) { resourceName = 'daily_tasks'; }
       $(".other-categories").html('');
+
       var resourceNames = ['daily_tasks', 'government_actions'];
       var currentResourceIndex = resourceNames.indexOf(resourceName);
       if (currentResourceIndex > -1) {
@@ -59,7 +55,8 @@ export default class MainView {
 
       for (let rName of resourceNames) {
         var buttonElement = $("<button/>", {
-          text: rName
+          text: rName,
+          class: "btn btn-danger"
         });
         buttonElement.on("click", function() {
           loadData(rName);
