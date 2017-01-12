@@ -26,6 +26,7 @@ defmodule FlamingPlanet.Router do
   scope "/", FlamingPlanet.Api do
     pipe_through :api
     resources "/daily_tasks", DailyTaskController, only: [:index]
+    resources "/government_actions", GovernmentActionController, only: [:index]
   end
 
   scope "/manage", FlamingPlanet.Manage, as: :manage do

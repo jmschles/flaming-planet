@@ -25,11 +25,10 @@ import loadView from './views/loader';
 function handleDOMContentLoaded() {
   // Get the current view name
   const viewName = document.getElementsByTagName('body')[0].dataset.jsViewName;
-  const resourceName = document.getElementsByTagName('body')[0].dataset.resourceName;
 
   const ViewClass = loadView(viewName);
   const view = new ViewClass();
-  view.mount(resourceName);
+  view.mount();
 
   window.currentView = view;
 }

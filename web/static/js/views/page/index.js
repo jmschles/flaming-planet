@@ -2,8 +2,8 @@ import MainView from '../main';
 
 
 export default class View extends MainView {
-  mount(resourceName) {
-    super.mount(resourceName);
+  mount() {
+    super.mount();
   }
 
   unmount() {
