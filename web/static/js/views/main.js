@@ -14,18 +14,18 @@ export default class MainView {
 
       $.getJSON(resourceName, function(response) {
         dailyTasks = response.data;
-        $.each(dailyTasks, function(i, task) {
+        $.each(dailyTasks, function(i, element) {
           var parentElement = $("<div/>", {
-            id: "task-" + i
+            id: "element-" + i
           });
           var headerElement = $("<h2/>");
 
           var linkElement = $("<a/>", {
-            href: task.info_link,
-            text: task.title
+            href: element.info_link,
+            text: element.title
           });
           var descriptionElement = $("<p/>", {
-            text: task.description
+            text: element.description
           });
 
           headerElement.append(linkElement);
@@ -35,7 +35,7 @@ export default class MainView {
 
           $('.content').append(parentElement);
 
-          $("#task-0").show();
+          $("#element-0").show();
         });
       });
 
@@ -44,14 +44,21 @@ export default class MainView {
 
     // Buttons to take you to other kinds of data
     function loadButtons(resourceName) {
-      if (!resourceName) { resourceName = 'daily_tasks'; }
-      $(".other-categories").html('');
+      var resourceNames = [
+        'daily_tasks',
+        'government_actions',
+        'inspirations',
+        'news_items',
+        'donations'
+      ];
 
-      var resourceNames = ['daily_tasks', 'government_actions'];
+      if (!resourceName) { resourceName = 'daily_tasks'; }
       var currentResourceIndex = resourceNames.indexOf(resourceName);
       if (currentResourceIndex > -1) {
         resourceNames.splice(currentResourceIndex, 1);
       }
+
+      $(".other-categories").html('');
 
       for (let rName of resourceNames) {
         var buttonElement = $("<button/>", {
