@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FlamingPlanet</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body class="main-view" data-js-view-name="<%= js_view_name(@conn, @view_template) %>">
+    <div class="container">
+      <header class="header">
+        <nav role="navigation">
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
+          <ol class="nav nav-pills pull-right">
+            <li><a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a></li>
+            <li><a href="https://xkcd.com/1732/">We're doomed!</a></li>
+          </ol>
+        </nav>
+      </header>
+
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
+    </div> <!-- /container -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

@@ -21,6 +21,6 @@ defmodule FlamingPlanet.SessionController do
   def delete(conn, _) do
     conn
     |> FlamingPlanet.Auth.logout()
-    |> redirect(to: session_path(conn, :new))
+    |> redirect(to: page_path(conn, :index))
   end
 end
