@@ -4,6 +4,14 @@ export default class MainView {
   mount () {
     var dailyTasks;
     var currentId = 0;
+    var resourcePairs = {
+      daily_tasks: 'What can I do today?',
+      government_actions: 'Is my government doing anything?',
+      inspirations: "I'm bummed. Inspire me!",
+      news_items: "What's the latest?",
+      donations: 'Who can I pay to fix it for me?'
+    };
+
     loadData();
     loadButtons();
 
@@ -62,7 +70,7 @@ export default class MainView {
 
       for (let rName of resourceNames) {
         var buttonElement = $("<button/>", {
-          text: rName,
+          text: resourcePairs[rName],
           class: "btn btn-danger"
         });
         buttonElement.on("click", function() {
