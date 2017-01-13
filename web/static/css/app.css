@@ -29,6 +29,7 @@
 
 .content {
   margin-bottom: 40px;
+  height: 250px;
 }
 
 .content h2 {
@@ -43,4 +44,19 @@
 .content p {
   font-size: 1.5em;
   color: #FF9;
+}
+
+.kitten-footer {
+  padding-top: 40px;
+  float: right;
+}
+
+.kitten-footer a {
+  color: #AAA;
+}
+
+.yes-but {
+  font-size: 2em;
+  color: #AAA;
+  padding-bottom: 10px;
 }
