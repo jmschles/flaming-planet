@@ -11,6 +11,12 @@ export default class MainView {
       news_items: "What's the latest?",
       donations: 'Who can I pay to fix it for me?'
     };
+    var buttonTextOptions = [
+      "Cool. Next.",
+      "Okay, tell me more.",
+      "Sure, what else?",
+      "Yeah, and..."
+    ]
 
     loadData();
 
@@ -48,6 +54,10 @@ export default class MainView {
         });
       });
 
+      var nextButton = $(".next-button");
+      nextButton.html(buttonTextOptions[Math.floor(Math.random() * buttonTextOptions.length)]);
+      nextButton.addClass("next-button");
+
       loadButtons(resourceName);
     }
 
@@ -61,7 +71,7 @@ export default class MainView {
         if (rName === resourceName) { continue; }
         var buttonElement = $("<button/>", {
           text: resourcePairs[rName],
-          class: "btn btn-danger"
+          class: "category-button"
         });
         buttonElement.on("click", function() {
           loadData(rName);
@@ -71,18 +81,22 @@ export default class MainView {
     }
 
     // Cycles through the data
-    $("#next").on("click", nextTask);
+    $(".next-button").on("click", nextResource);
 
-    function nextTask() {
+    function nextResource() {
       $("#element-" + currentId).hide();
       currentId++;
-      var nextTaskElement = $("#element-" + currentId);
-      if (nextTaskElement.length !== 0) {
-        nextTaskElement.show();
+      var nextElement = $("#element-" + currentId);
+      if (nextElement.length !== 0) {
+        nextElement.show();
       } else {
         currentId = 0;
         $("#element-0").show();
       }
+
+      var nextButton = $(".next-button");
+      nextButton.html(buttonTextOptions[Math.floor(Math.random() * buttonTextOptions.length)]);
+      nextButton.addClass("next-button");
     }
   }
 

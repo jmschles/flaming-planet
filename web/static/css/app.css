@@ -1,1 +1,46 @@
 /* This file is for your main application css. */
+body {
+  background-color: #000;
+}
+
+.category-button {
+  background-color: #D33;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #FFF;
+  padding: 10px;
+  margin: 4px;
+  border-radius: 7px;
+  border: 2px solid #CCC
+}
+
+.next-button {
+  background-color: #33D;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #FFF;
+  padding: 10px;
+  margin: 4px 4px 40px 4px;
+  border-radius: 7px;
+  border: 2px solid #CCC;
+  width: 250px;
+  text-align: center;
+}
+
+.content {
+  margin-bottom: 40px;
+}
+
+.content h2 {
+  font-size: 4em;
+  margin-botton: 20px;
+}
+
+.content h2 a {
+  color: #FF5;
+}
+
+.content p {
+  font-size: 1.5em;
+  color: #FF9;
+}

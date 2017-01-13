@@ -1,5 +1,5 @@
 <div class="content"></div>
 <div class="next-button">
-  <a class="btn btn-primary" href="#" id="next">Next</a>
+  <a href="#" class="next-button">Next</a>
 </div>
 <div class="other-categories"></div>
