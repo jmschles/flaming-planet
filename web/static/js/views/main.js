@@ -16,7 +16,7 @@ export default class MainView {
       "Okay, tell me more.",
       "Sure, what else?",
       "Yeah, and..."
-    ]
+    ];
 
     loadData();
 
@@ -54,10 +54,7 @@ export default class MainView {
         });
       });
 
-      var nextButton = $(".next-button");
-      nextButton.html(buttonTextOptions[Math.floor(Math.random() * buttonTextOptions.length)]);
-      nextButton.addClass("next-button");
-
+      populateNextButton();
       loadButtons(resourceName);
     }
 
@@ -94,9 +91,11 @@ export default class MainView {
         $("#element-0").show();
       }
 
-      var nextButton = $(".next-button");
-      nextButton.html(buttonTextOptions[Math.floor(Math.random() * buttonTextOptions.length)]);
-      nextButton.addClass("next-button");
+      populateNextButton();
+    }
+
+    function populateNextButton() {
+      $(".next-button").html(buttonTextOptions[Math.floor(Math.random() * buttonTextOptions.length)]);
     }
   }
 
