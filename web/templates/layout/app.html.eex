@@ -7,12 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello FlamingPlanet!</title>
+    <title>FlamingPlanet</title>
     <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
-  <body data-js-view-name="<%= js_view_name(@conn, @view_template) %>" data-resource-name="<%= resource_name(@conn) %>">
+  <body data-js-view-name="<%= js_view_name(@conn, @view_template) %>">
     <div class="container">
       <header class="header">
         <nav role="navigation">
@@ -23,9 +23,6 @@
             <%= if @current_admin do %>
               <li><%= link "#{ @current_admin.username }", to: admin_path(@conn, :show) %></li>
               <li><%= link "Log out", to: session_path(@conn, :delete, @current_admin), method: "delete" %></li>
-            <% else %>
-              <li><a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a></li>
-              <li><a href="https://xkcd.com/1732/">We're doomed!</a></li>
             <% end %>
           </ol>
         </nav>
