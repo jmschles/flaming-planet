@@ -2,8 +2,8 @@ import $ from 'jquery'
 
 export default class MainView {
   mount () {
-    var dailyTasks;
-    var currentId = 0;
+    var resources;
+    var currentId;
     var resourcePairs = {
       daily_tasks: 'What can I do today?',
       government_actions: 'Is my government doing anything?',
@@ -13,16 +13,17 @@ export default class MainView {
     };
 
     loadData();
-    loadButtons();
 
     // Bootstrap data to the page
     function loadData(resourceName) {
       if (!resourceName) { resourceName = 'daily_tasks'; }
+
+      currentId = 0;
       $('.content').html('');
 
       $.getJSON(resourceName, function(response) {
-        dailyTasks = response.data;
-        $.each(dailyTasks, function(i, element) {
+        resources = response.data;
+        $.each(resources, function(i, element) {
           var parentElement = $("<div/>", {
             id: "element-" + i
           });
@@ -52,23 +53,12 @@ export default class MainView {
 
     // Buttons to take you to other kinds of data
     function loadButtons(resourceName) {
-      var resourceNames = [
-        'daily_tasks',
-        'government_actions',
-        'inspirations',
-        'news_items',
-        'donations'
-      ];
-
       if (!resourceName) { resourceName = 'daily_tasks'; }
-      var currentResourceIndex = resourceNames.indexOf(resourceName);
-      if (currentResourceIndex > -1) {
-        resourceNames.splice(currentResourceIndex, 1);
-      }
 
       $(".other-categories").html('');
 
-      for (let rName of resourceNames) {
+      for (let rName in resourcePairs) {
+        if (rName === resourceName) { continue; }
         var buttonElement = $("<button/>", {
           text: resourcePairs[rName],
           class: "btn btn-danger"
