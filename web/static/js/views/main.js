@@ -84,14 +84,14 @@ export default class MainView {
     $("#next").on("click", nextTask);
 
     function nextTask() {
-      $("#task-" + currentId).hide();
+      $("#element-" + currentId).hide();
       currentId++;
-      var nextTaskElement = $("#task-" + currentId);
+      var nextTaskElement = $("#element-" + currentId);
       if (nextTaskElement.length !== 0) {
         nextTaskElement.show();
       } else {
         currentId = 0;
-        $("#task-0").show();
+        $("#element-0").show();
       }
     }
   }
