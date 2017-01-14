@@ -7,7 +7,7 @@ export default class MainView {
     var leadIns;
     var nextButtonTextOptions = [
       "Cool. Next.",
-      "Okay, tell me more.",
+      "Okay, how about a different thing?",
       "Sure, what else?",
       "Yeah, and..."
     ];
