@@ -28,13 +28,13 @@
 }
 
 .content {
-  margin-bottom: 40px;
-  height: 250px;
+  margin-bottom: 30px;
+  height: 200px;
 }
 
 .content h2 {
   font-size: 4em;
-  margin-botton: 20px;
+  margin-botton: 15px;
 }
 
 .content h2 a {
@@ -60,3 +60,9 @@
   color: #AAA;
   padding-bottom: 10px;
 }
+
+.lead-in {
+  font-size: 2em;
+  color: #AAA;
+}
+

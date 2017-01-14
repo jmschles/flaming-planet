@@ -4,19 +4,55 @@ export default class MainView {
   mount () {
     var resources;
     var currentId;
-    var resourcePairs = {
-      daily_tasks: 'What can I do today?',
-      government_actions: 'Is my government doing anything?',
-      inspirations: "I'm bummed. Inspire me!",
-      news_items: "What's the latest?",
-      donations: 'Who can I pay to fix it for me?'
-    };
-    var buttonTextOptions = [
+    var leadIns;
+    var nextButtonTextOptions = [
       "Cool. Next.",
       "Okay, tell me more.",
       "Sure, what else?",
       "Yeah, and..."
     ];
+    var resourcePairs = {
+      daily_tasks: {
+        buttonText: 'What can I do today?',
+        leadIns: [
+          'You could...',
+          'Get on out there and...',
+          'Why don\'t you...'
+        ]
+      },
+      government_actions: {
+        buttonText: 'Is my government doing anything?',
+        leadIns: [
+          'Check this out:',
+          'This is in the works:',
+          'They\'re working on...'
+        ]
+      },
+      inspirations: {
+        buttonText: "I'm bummed. Inspire me!",
+        leadIns: [
+          'This is awesome:',
+          'Take heart!',
+          'Get a load of this:'
+        ]
+      },
+      news_items: {
+        buttonText: "What's the latest?",
+        leadIns: [
+          'This is happening:',
+          'Did you know...',
+          'Extra, extra!'
+        ]
+      },
+      donations: {
+        buttonText: 'Who can I pay to fix it for me?',
+        leadIns: [
+          'These people!',
+          'Great work is being done by:',
+          'Send those dollars to:'
+        ]
+      }
+    };
 
     loadData();
 
@@ -24,6 +60,7 @@ export default class MainView {
     function loadData(resourceName) {
       if (!resourceName) { resourceName = 'daily_tasks'; }
 
+      leadIns = resourcePairs[resourceName]['leadIns'];
       currentId = 0;
       $('.content').html('');
 
@@ -55,6 +92,7 @@ export default class MainView {
       });
 
       populateNextButton();
+      populateLeadIn();
       loadButtons(resourceName);
     }
 
@@ -67,7 +105,7 @@ export default class MainView {
       for (let rName in resourcePairs) {
         if (rName === resourceName) { continue; }
         var buttonElement = $("<button/>", {
-          text: resourcePairs[rName],
+          text: resourcePairs[rName]['buttonText'],
           class: "category-button"
         });
         buttonElement.on("click", function() {
@@ -91,11 +129,16 @@ export default class MainView {
         $("#element-0").show();
       }
 
+      populateLeadIn();
       populateNextButton();
     }
 
     function populateNextButton() {
-      $(".next-button").html(buttonTextOptions[Math.floor(Math.random() * buttonTextOptions.length)]);
+      $(".next-button").html(nextButtonTextOptions[Math.floor(Math.random() * nextButtonTextOptions.length)]);
+    }
+
+    function populateLeadIn() {
+      $(".lead-in").html(leadIns[Math.floor(Math.random() * leadIns.length)]);
     }
   }
 
