@@ -27,13 +27,32 @@
   text-align: center;
 }
 
+.next-button:hover {
+  cursor: pointer;
+}
+
+.custom-header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #444;
+}
+
+.custom-header ol li a {
+  color: #AAA;
+}
+
+.trouble-message {
+  font-size: 1.8em;
+  color: #F80;
+}
+
 .content {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   height: 200px;
 }
 
 .content h2 {
-  font-size: 4em;
+  font-size: 3.6em;
   margin-botton: 15px;
 }
 
@@ -56,13 +75,13 @@
 }
 
 .yes-but {
-  font-size: 2em;
+  font-size: 1.8em;
   color: #AAA;
   padding-bottom: 10px;
 }
 
 .lead-in {
-  font-size: 2em;
+  font-size: 1.8em;
   color: #AAA;
 }
 

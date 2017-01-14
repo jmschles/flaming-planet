@@ -14,18 +14,14 @@
 
   <body class="main-view" data-js-view-name="<%= js_view_name(@conn, @view_template) %>">
     <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
-          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
-          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
-          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
-          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="60" width="50">
-          <ol class="nav nav-pills pull-right">
-            <li><a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a></li>
-            <li><a href="https://xkcd.com/1732/">We're doomed!</a></li>
-          </ol>
-        </nav>
+      <header class="custom-header">
+        <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="40" width="40">
+        <span class="trouble-message"><em>THIS IS BAD. What do we do?!</em></span>
+        <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="40" width="40">
+        <ol class="nav nav-pills pull-right">
+          <li><a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a></li>
+          <li><a href="https://xkcd.com/1732/">We're doomed!</a></li>
+        </ol>
       </header>
 
       <main role="main">
