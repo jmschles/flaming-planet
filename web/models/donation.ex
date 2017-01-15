@@ -16,5 +16,6 @@ defmodule FlamingPlanet.Donation do
     struct
     |> cast(params, [:title, :info_link, :description])
     |> validate_required([:title, :info_link, :description])
+    |> validate_length(:description, max: 255)
   end
 end

@@ -12,5 +12,7 @@ defmodule FlamingPlanet.Inspiration do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, ~w(title info_link description), [])
+    |> validate_required([:title, :info_link, :description])
+    |> validate_length(:description, max: 255)
   end
 end
