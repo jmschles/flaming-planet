@@ -9,6 +9,7 @@
 
     <title>FlamingPlanet</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -36,7 +37,7 @@
     <div class="footer">
       <div class="container">
         <div class="copyright">
-          © Schles is More 2017
+          © FlamingPlanet Productions 2017
         </div>
         <div class="kitten-footer">
           <a href="https://www.buzzfeed.com/chelseamarshall/best-kitten-pictures">Depressed? Have some kittens!</a>

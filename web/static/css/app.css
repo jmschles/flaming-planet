@@ -39,6 +39,7 @@
 }
 
 .custom-header div {
+  font-family: 'Francois One', sans-serif;
   display: inline-block;
   text-align: left;
 }
@@ -62,9 +63,11 @@
 .trouble-message {
   font-size: 1.8em;
   color: #F80;
+  padding: 0px 10px;
 }
 
 .content {
+  font-family: 'Francois One', sans-serif;
   margin-bottom: 20px;
   height: 200px;
 }
@@ -83,6 +86,10 @@
   color: #FF9;
 }
 
+.footer {
+  font-family: 'Francois One', sans-serif;
+}
+
 .kitten-footer {
   padding-top: 40px;
   float: right;
@@ -99,12 +106,14 @@
 }
 
 .yes-but {
+  font-family: 'Francois One', sans-serif;
   font-size: 1.8em;
   color: #AAA;
   padding-bottom: 10px;
 }
 
 .lead-in {
+  font-family: 'Francois One', sans-serif;
   font-size: 1.8em;
   color: #AAA;
 }
