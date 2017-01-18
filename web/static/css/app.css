@@ -35,10 +35,28 @@
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #444;
+  text-align: center;
 }
 
-.custom-header ol li a {
+.custom-header div {
+  display: inline-block;
+  text-align: left;
+}
+
+.custom-header .right {
+  padding-left: 40px;
+}
+
+.custom-header .left {
+  padding-right: 40px;
+}
+
+.custom-header div a {
   color: #AAA;
+}
+
+.centered-header {
+  text-align: center;
 }
 
 .trouble-message {
@@ -72,6 +90,12 @@
 
 .kitten-footer a {
   color: #AAA;
+}
+
+.copyright {
+  padding-top: 40px;
+  float: left;
+  color: #777;
 }
 
 .yes-but {

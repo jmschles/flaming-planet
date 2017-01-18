@@ -15,13 +15,17 @@
   <body class="main-view" data-js-view-name="<%= js_view_name(@conn, @view_template) %>">
     <div class="container">
       <header class="custom-header">
-        <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="40" width="40">
-        <span class="trouble-message"><em>THIS IS BAD. What do we do?!</em></span>
-        <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="40" width="40">
-        <ol class="nav nav-pills pull-right">
-          <li><a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a></li>
-          <li><a href="https://xkcd.com/1732/">We're doomed!</a></li>
-        </ol>
+        <div class="left">
+          <a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a>
+        </div>
+        <div>
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="40" width="40">
+          <span class="trouble-message"><em>THIS IS BAD. What do we do?!</em></span>
+          <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="40" width="40">
+        </div>
+        <div class="right">
+          <a href="https://xkcd.com/1732/">We're doomed!</a>
+        </div>
       </header>
 
       <main role="main">
@@ -31,6 +35,9 @@
     </div> <!-- /container -->
     <div class="footer">
       <div class="container">
+        <div class="copyright">
+          © Schles is More 2017
+        </div>
         <div class="kitten-footer">
           <a href="https://www.buzzfeed.com/chelseamarshall/best-kitten-pictures">Depressed? Have some kittens!</a>
         </div>
