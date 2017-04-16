@@ -17,7 +17,7 @@
     <div class="container">
       <header class="custom-header">
         <div class="left">
-          <a href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a>
+          <a target="_blank" href="https://www.youtube.com/watch?v=kCpjgl2baLs">Oh no!</a>
         </div>
         <div>
           <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="40" width="40">
@@ -25,7 +25,7 @@
           <img src="http://drt911.com/wp-content/uploads/2014/07/Fire-Icon-Website.png" alt="fire" height="40" width="40">
         </div>
         <div class="right">
-          <a href="https://xkcd.com/1732/">We're doomed!</a>
+          <a target="_blank" href="https://xkcd.com/1732/">We're doomed!</a>
         </div>
       </header>
 
@@ -40,7 +40,7 @@
           © FlamingPlanet Productions 2017
         </div>
         <div class="kitten-footer">
-          <a href="https://www.buzzfeed.com/chelseamarshall/best-kitten-pictures">Depressed? Have some kittens!</a>
+          <a target="_blank" href="https://www.buzzfeed.com/chelseamarshall/best-kitten-pictures">Depressed? Have some kittens!</a>
         </div>
       </div>
     </div>
