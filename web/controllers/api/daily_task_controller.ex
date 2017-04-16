@@ -4,7 +4,7 @@ defmodule FlamingPlanet.Api.DailyTaskController do
   alias FlamingPlanet.DailyTask
 
   def index(conn, _params) do
-    daily_tasks = Repo.all(DailyTask)
+    daily_tasks = from(d in DailyTask, order_by: [desc: d.inserted_at]) |> Repo.all
     render(conn, "index.json", daily_tasks: daily_tasks)
   end
 end

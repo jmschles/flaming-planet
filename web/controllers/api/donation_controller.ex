@@ -4,7 +4,7 @@ defmodule FlamingPlanet.Api.DonationController do
   alias FlamingPlanet.Donation
 
   def index(conn, _params) do
-    donations = Repo.all(Donation)
+    donations = from(d in Donation, order_by: [desc: d.inserted_at]) |> Repo.all
     render(conn, "index.json", donations: donations)
   end
 end
