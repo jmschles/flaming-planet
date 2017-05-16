@@ -16,6 +16,8 @@ defmodule FlamingPlanet.NewsItem do
     struct
     |> cast(params, [:title, :info_link, :description])
     |> validate_required([:title, :info_link, :description])
+    |> validate_length(:title, max: 255)
+    |> validate_length(:info_link, max: 255)
     |> validate_length(:description, max: 255)
   end
 end
