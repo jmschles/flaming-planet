@@ -1,6 +1,6 @@
 # FlamingPlanet
 
-In the wake of the United States' 2016 presidential election, many of us who are aware of human-induced climate change and its implications are worried.  Climate issues received almost no attention during the campaign season, and we've elected a candidate whose indifference to the subject seems clear.  If we can't count on our government to take the initiative, how can ordinary people hope to make a difference?
+In the wake of the United States' 2016 presidential election, many of us who are aware of human-induced climate change and its implications are worried. Climate issues received almost no attention during the campaign season; how can ordinary people hope to make a difference?
 
 This project is an attempt to answer that question.  By raising awareness and encouraging environmentally friendly habits, we hope to encourage individuals to take action, one manageable step at a time.
 
